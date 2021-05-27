@@ -1,9 +1,4 @@
-div {
-    background-color: grey;
-    min-height: 20px;
-  }
-  
-  #wrapper {
+#wrapper {
     background-color: white;
     display: grid;
     grid-template-columns: repeat(12, fr);
@@ -11,8 +6,16 @@ div {
     min-width: 300px;
     height: 300px;
     gap: 10px;
-  }
-  
+}
+
+#wrapper div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    min-height: 100px;
+}
+
 #one {
     grid-column: 1 / 13;
     grid-row: 1 / 2;
