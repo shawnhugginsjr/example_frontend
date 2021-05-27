@@ -36,7 +36,11 @@
         const [boxClickCount, boxSetClickCount] = React.useState(0);
         const boxIds = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
         const boxes = []
-        const colors = ['DarkMagenta', 'DarkBlue', 'Coral', 'DarkOrange', 'ForestGreen', 'Grey', 'PeachPuff']
+        const colors = [
+            'DarkMagenta', 'DarkBlue', 'Coral', 'DarkOrange', 'ForestGreen',
+            'Grey', 'PeachPuff', 'PaleVioletRed', 'DarkRed', 'Chocolate',
+            'Maroon', 'SteelBlue', 'Teal', 'MidnightBlue', 'MediumAquaMarine'
+        ]
 
         pickRandomColor = () => {
             return colors[Math.floor(Math.random() * colors.length)]
