@@ -1,3 +1,8 @@
+/*
+I found the change from mobile to landscape unorthodox.
+So I tried to imitate it using CSS grid.
+*/
+
 #wrapper {
     background-color: white;
     display: grid;
