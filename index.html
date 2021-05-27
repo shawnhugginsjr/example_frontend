@@ -5,35 +5,65 @@
 </head>
 
 <body>
-    <div id='wrapper'>
-        <div id='one'>
-            one
-        </div>
-        <div id='two'>
-            two
-        </div>
-        <div id='three'>
-            three
-        </div>
-        <div id='four'>
-            four
-        </div>
-        <div id='five'>
-            five
-        </div>
-        <div id='six'>
-            six
-        </div>
-        <div id='seven'>
-            seven
-        </div>
-        <div id='eight'>
-            eight
-        </div>
-        <div id='nine'>
-            nine
-        </div>
+    <div id="root">
     </div>
 </body>
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script>
+    /*
+    This task is small. So it is written entirely in a script tag. This also makes it easy to share 
+    on jsFiddle as requested. A production project should have both functional components defined in 
+    seperate files.
+    */
+    const e = React.createElement;
+
+    function Box(props) {
+        return e(
+            'div',
+            {
+                id: props.boxId,
+                style: {
+                    backgroundColor: props.color
+                },
+                onClick: () => props.boxSetClickCount(props.boxClickCount + 1)
+            },
+            props.boxNumber
+        )
+    }
+
+    function BoxContainer(props) {
+        const [boxClickCount, boxSetClickCount] = React.useState(0);
+        const boxIds = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+        const boxes = []
+        const colors = ['DarkMagenta', 'DarkBlue', 'Coral', 'DarkOrange', 'ForestGreen', 'Grey', 'PeachPuff']
+
+        pickRandomColor = () => {
+            return colors[Math.floor(Math.random() * colors.length)]
+        }
+
+        for (const [index, value] of boxIds.entries()) {
+            props = {
+                boxNumber: index + 1,
+                boxId: value,
+                boxClickCount: boxClickCount,
+                boxSetClickCount: boxSetClickCount,
+                color: pickRandomColor()
+            }
+            let box = e(Box, props)
+            boxes.push(box)
+        }
+
+        return e(
+            'div',
+            { id: 'wrapper' },
+            boxes
+        )
+    }
+
+    const domContainer = document.querySelector('#root');
+    ReactDOM.render(e(BoxContainer), domContainer);
+
+</script>
 
 </html>
