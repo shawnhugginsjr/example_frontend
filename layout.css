@@ -1,10 +1,11 @@
 #wrapper {
     background-color: white;
     display: grid;
-    grid-template-columns: repeat(12, fr);
-    grid-template-rows: repeat(12, fr);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(14, minmax(0, 1fr));
     min-width: 300px;
-    height: 300px;
+    max-width: 960px;
+    margin: 0 auto;
     gap: 10px;
 }
 
@@ -64,38 +65,38 @@
 @media only screen and (min-width: 600px) {
     #one {
         grid-column: 1 / 7;
-        grid-row: 1 / 7;
+        grid-row: 1 / 9;
     }
     #two {
         grid-column: 7 / 13;
-        grid-row: 1 / 4;
+        grid-row: 1 / 5;
     }
     #three {
         grid-column: 7 / 10;
-        grid-row: 4 / 7;
+        grid-row: 5 / 9;
     }
     #four {
         grid-column: 10 / 13;
-        grid-row: 4 / 7;
+        grid-row: 5 / 9;
     }
     #five {
         grid-column: 1 / 5;
-        grid-row: 7 / 9;
+        grid-row: 9 / 11;
     }
     #six {
         grid-column: 1 / 5;
-        grid-row: 9 / 13;
+        grid-row: 11 / 15;
     }
     #seven {
         grid-column: 5 / 9;
-        grid-row: 7 / 13;
+        grid-row: 9 / 15;
     }
     #eight {
         grid-column: 9 / 13;
-        grid-row: 7 / 10;
+        grid-row: 9 / 13;
     }
     #nine {
         grid-column: 9 / 13;
-        grid-row: 10 / 13;
+        grid-row: 13 / 15;
     }
 }
